@@ -339,6 +339,11 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
 .ba-head h3{font-size:clamp(19px,1.9vw,25px);margin:0 0 8px;font-weight:400}
 .ba-head p{margin:0;color:var(--muted);font-weight:300;max-width:62ch}
 @media(max-width:860px){.wg,.ba{grid-template-columns:repeat(2,1fr)}}
+
+.cabg{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,16px)}
+.cabg figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg2);box-shadow:var(--shadow-s)}
+.cabg img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+@media(max-width:860px){.cabg{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body class="loc-zap">
@@ -601,6 +606,17 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <figure><img src="p-2.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
       <figure><img src="p-3.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
     </div>
+
+    <div class="ba-head rv">
+      <h3>Макияж, причёски и брови</h3>
+      <p>Кроме ногтей, в студии делают макияж, причёски, брови и ресницы. Работает отдельный визажист и стилист по волосам.</p>
+    </div>
+    <div class="wg rv">
+      <figure><img src="mk-1.jpg" alt="Макияж и причёска, студия «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="mk-2.jpg" alt="Макияж и причёска, студия «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="mk-3.jpg" alt="Макияж и причёска, студия «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="mk-4.jpg" alt="Макияж и причёска, студия «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+    </div>
   </div>
 </section>
 
@@ -703,6 +719,22 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
         <p>Прекрасный мастер. Была впервые, работает аккуратно, вежливая и внимательная, учла все пожелания. Буду обращаться снова.</p>
         <div class="who">Елизавета · к мастеру Диляре</div><div class="when">5 августа</div></div>
     </div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="vnutri">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Студия</span>
+      <h2>Как здесь <em>внутри</em></h2>
+      <p>Отдельный кабинет со своими рабочими местами и инструментом. Приём только по предварительной записи.</p>
+    </div>
+    <div class="cabg rv">
+      <figure><img src="cab-1.jpg" alt="Кабинет студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="cab-2.jpg" alt="Кабинет студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="cab-3.jpg" alt="Кабинет студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="cab-4.jpg" alt="Кабинет студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
     </div>
   </div>
 </section>

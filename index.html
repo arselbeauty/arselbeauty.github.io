@@ -327,6 +327,18 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
 .step{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-s)}
 .step b{display:block;font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1;margin-bottom:10px}
 .step p{font-size:15px;color:var(--muted);font-weight:300}
+
+.wg{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,16px)}
+.wg figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg2);box-shadow:var(--shadow-s)}
+.wg img,.ba img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.wg img{transition:transform .5s ease}
+.wg figure:hover img{transform:scale(1.05)}
+.ba{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,16px)}
+.ba figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg2)}
+.ba-head{margin:clamp(36px,4vw,58px) 0 16px}
+.ba-head h3{font-size:clamp(19px,1.9vw,25px);margin:0 0 8px;font-weight:400}
+.ba-head p{margin:0;color:var(--muted);font-weight:300;max-width:62ch}
+@media(max-width:860px){.wg,.ba{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body class="loc-zap">
@@ -344,7 +356,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <a href="#master">О студии</a>
       <a href="#ceny">Цены</a>
       <a href="#kursy">Курсы</a>
-      <a href="#uchenicy">Ученицы</a>
+      <a href="#raboty">Работы</a>
       <a href="#otzyvy">Отзывы</a>
       <a href="#kontakty">Контакты</a>
     </nav>
@@ -559,7 +571,41 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
   </div>
 </section>
 
-<section id="kursy">
+<section id="raboty">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Работы</span>
+      <h2>Как это <em>выглядит</em></h2>
+      <p>Фотографии работ студии. Маникюр, педикюр и подология, снятые прямо на приёме.</p>
+    </div>
+    <div class="wg rv">
+      <figure><img src="w-1.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-2.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-3.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-4.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-5.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-6.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-7.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-8.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-9.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-10.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-11.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="w-12.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+    </div>
+    <div class="ba-head rv">
+      <h3>Педикюр и подология: до и после</h3>
+      <p>Здесь результат виден лучше любого описания. На каждом кадре состояние стопы до обработки и после неё.</p>
+    </div>
+    <div class="ba rv">
+      <figure><img src="p-1.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="p-2.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="p-3.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="p-4.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="kursy">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="tag">Обучение</span>
@@ -572,7 +618,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
   </div>
 </section>
 
-<section class="light" id="uchenicy">
+<section id="uchenicy">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="tag">Ученицы</span>

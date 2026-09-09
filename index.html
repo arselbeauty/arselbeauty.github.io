@@ -341,6 +341,9 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
 .wg img{transition:transform .5s ease}
 .wg figure:hover img{transform:scale(1.05)}
 .ba{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.2vw,16px)}
+.ba.ba-2{grid-template-columns:repeat(2,1fr);max-width:860px}
+.ba.ba-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:860px){.ba.ba-2,.ba.ba-4{grid-template-columns:repeat(2,1fr);max-width:none}}
 .ba figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg2)}
 .ba-head{margin:clamp(36px,4vw,58px) 0 16px}
 .ba-head h3{font-size:clamp(19px,1.9vw,25px);margin:0 0 8px;font-weight:400}
@@ -638,7 +641,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <h3>Педикюр с покрытием</h3>
       <p>Стопы делают не только здоровыми, но и красивыми: покрытие, дизайн, аккуратный край.</p>
     </div>
-    <div class="ba rv">
+    <div class="ba ba-2 rv">
       <figure><img src="ped-1.jpg" alt="Педикюр с покрытием, студия «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
       <figure><img src="ped-2.jpg" alt="Педикюр с покрытием, студия «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
     </div>
@@ -647,7 +650,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <h3>Педикюр и подология: до и после</h3>
       <p>Здесь результат виден лучше любого описания. На каждом кадре состояние стопы до обработки и после неё.</p>
     </div>
-    <div class="ba rv">
+    <div class="ba ba-4 rv">
       <figure><img src="p-2.jpg" alt="Педикюр и подология: до и после" loading="lazy" onerror="this.closest('figure').remove()"></figure>
       <figure><img src="p-3.jpg" alt="Педикюр и подология: до и после" loading="lazy" onerror="this.closest('figure').remove()"></figure>
       <figure><img src="pd-1.jpg" alt="Подология: ноготь до и после обработки" loading="lazy" onerror="this.closest('figure').remove()"></figure>

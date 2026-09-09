@@ -37,7 +37,7 @@ section{padding:clamp(56px,6.2vw,112px) 0}
 .demo b{color:#fff;font-weight:600}
 
 /* шапка */
-header{position:fixed;top:46px;left:0;right:0;z-index:80;border-bottom:1px solid transparent;
+header{position:fixed;top:56px;left:0;right:0;z-index:80;border-bottom:1px solid transparent;
        transition:background .35s,border-color .35s}
 header.solid{background:rgba(247,244,238,.94);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
 header .wrap{display:flex;align-items:center;gap:28px;height:82px}
@@ -118,7 +118,7 @@ header .hbtn{padding:11px 24px;font-size:14px}
   .cover-in{padding:34px 22px 54px;text-align:left}
 }
 @media(max-width:960px){
-  .cover{padding-top:142px}
+  .cover{padding-top:152px}
   .cover-stats{grid-template-columns:1fr 1fr}
   .cover-stats>div{padding:20px 14px;border-top:1px solid rgba(255,255,255,.13)}
   .cover-stats>div:nth-child(odd){border-left:0}
@@ -273,13 +273,21 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
   border-bottom:1px solid var(--line)}
 .citybar-t{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
   font-weight:600;margin-right:4px}
-.cbtn{font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.05em;cursor:pointer;
-  background:transparent;border:1.5px solid var(--line);color:var(--muted);
-  padding:6px 20px;border-radius:999px;transition:.18s;line-height:1.25}
-.cbtn:hover{border-color:var(--gold-lt)}
-.cbtn.on{background:var(--gold);border-color:var(--gold);color:#fff}
-@media(max-width:520px){.citybar{gap:7px;height:44px}.citybar-t{display:none}
-  .cbtn{padding:6px 16px;font-size:13px}header{top:44px}}
+.cbtn{font-family:var(--sans);cursor:pointer;background:transparent;border:0;color:var(--muted);
+  padding:7px 18px 9px;transition:.18s;line-height:1.2;position:relative;text-align:center;white-space:nowrap}
+.cbtn b{display:block;font-size:13.5px;font-weight:600;letter-spacing:.04em}
+.cbtn span{display:block;font-size:11.5px;font-weight:400;letter-spacing:0;opacity:.8;margin-top:1px}
+.cbtn:hover{color:var(--deep)}
+.cbtn.on{color:var(--deep)}
+.cbtn.on:after{content:'';position:absolute;left:14px;right:14px;bottom:0;height:2.5px;
+  background:var(--gold);border-radius:2px}
+.citybar{height:56px;gap:18px}
+@media(max-width:560px){
+  .citybar{gap:0;height:56px;padding:0 10px}
+  .citybar-t{display:none}
+  .cbtn{flex:1 1 0;padding:8px 6px}
+  header{top:56px}
+}
 
 body.loc-zap .only-yar{display:none!important}
 body.loc-yar .only-zap{display:none!important}
@@ -388,8 +396,8 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
 
 <div class="citybar">
   <span class="citybar-t">Студия</span>
-  <button class="cbtn on" type="button" data-city="zap">Юбилейный · Запорожская, 1</button>
-  <button class="cbtn" type="button" data-city="yar">Крохалева · Ярославского, 60</button>
+  <button class="cbtn on" type="button" data-city="zap"><b>Юбилейный</b><span>Запорожская, 1</span></button>
+  <button class="cbtn" type="button" data-city="yar"><b>Крохалева</b><span>Ярославского, 60</span></button>
 </div>
 
 <header id="hd">

@@ -338,7 +338,7 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
 .ba-head{margin:clamp(36px,4vw,58px) 0 16px}
 .ba-head h3{font-size:clamp(19px,1.9vw,25px);margin:0 0 8px;font-weight:400}
 .ba-head p{margin:0;color:var(--muted);font-weight:300;max-width:62ch}
-.bawg{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.2vw,16px)}
+.bawg{max-width:520px;margin:0 auto}
 @media(max-width:900px){.bawg{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
 .baw{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:900/1452;user-select:none;touch-action:none;cursor:ew-resize;background:#000}
 .baw .side{position:absolute;inset:0}
@@ -609,8 +609,8 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <figure><img src="w-12.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
     </div>
     <div class="ba-head rv">
-      <h3>Пятки до и после одной обработки</h3>
-      <p>Потяните ползунок на любом кадре, чтобы увидеть результат.</p>
+      <h3>Пятка до и после одной обработки</h3>
+      <p>Потяните ползунок, чтобы увидеть результат.</p>
     </div>
     <div class="bawg">
       <div class="baw rv">
@@ -620,30 +620,6 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
         </div>
         <div class="side before">
           <img src="ba-do-v3.jpg" alt="Пятка до обработки: сухая кожа и трещины" loading="lazy">
-          <span class="lbl l">До</span>
-        </div>
-        <div class="handle"></div>
-        <div class="knob">‹›</div>
-      </div>
-      <div class="baw rv">
-        <div class="side">
-          <img src="ba2-posle-v3.jpg" alt="Стопа после обработки в студии «Арсель»" loading="lazy">
-          <span class="lbl r">После</span>
-        </div>
-        <div class="side before">
-          <img src="ba2-do-v3.jpg" alt="Стопа до обработки: натоптыши" loading="lazy">
-          <span class="lbl l">До</span>
-        </div>
-        <div class="handle"></div>
-        <div class="knob">‹›</div>
-      </div>
-      <div class="baw rv">
-        <div class="side">
-          <img src="ba3-posle-v3.jpg" alt="Пятка после обработки в студии «Арсель»" loading="lazy">
-          <span class="lbl r">После</span>
-        </div>
-        <div class="side before">
-          <img src="ba3-do-v3.jpg" alt="Пятка до обработки: трещины" loading="lazy">
           <span class="lbl l">До</span>
         </div>
         <div class="handle"></div>
@@ -665,6 +641,8 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <p>Здесь результат виден лучше любого описания. На каждом кадре состояние стопы до обработки и после неё.</p>
     </div>
     <div class="ba rv">
+      <figure><img src="p-2.jpg" alt="Педикюр и подология: до и после" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="p-3.jpg" alt="Педикюр и подология: до и после" loading="lazy" onerror="this.closest('figure').remove()"></figure>
       <figure><img src="pd-1.jpg" alt="Подология: ноготь до и после обработки" loading="lazy" onerror="this.closest('figure').remove()"></figure>
       <figure><img src="pd-2.jpg" alt="Подология: состояние ногтя до обработки" loading="lazy" onerror="this.closest('figure').remove()"></figure>
     </div>

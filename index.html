@@ -338,6 +338,16 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
 .ba-head{margin:clamp(36px,4vw,58px) 0 16px}
 .ba-head h3{font-size:clamp(19px,1.9vw,25px);margin:0 0 8px;font-weight:400}
 .ba-head p{margin:0;color:var(--muted);font-weight:300;max-width:62ch}
+.baw{position:relative;max-width:760px;margin:0 auto;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5;user-select:none;touch-action:none;cursor:ew-resize;background:#000}
+.baw .side{position:absolute;inset:0}
+.baw img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.baw .before{clip-path:inset(0 50% 0 0);transition:clip-path .05s linear}
+.baw .handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;box-shadow:0 0 14px rgba(0,0,0,.45);pointer-events:none}
+.baw .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.35);pointer-events:none;display:grid;place-items:center;font-size:15px;color:var(--gold-d);font-weight:700;letter-spacing:-2px}
+.baw .lbl{position:absolute;bottom:16px;background:rgba(27,39,37,.82);color:#fff;font-size:13px;font-weight:600;padding:7px 15px;border-radius:999px;pointer-events:none;backdrop-filter:blur(4px)}
+.baw .lbl.l{left:16px}
+.baw .lbl.r{right:16px}
+@media(max-width:760px){.baw{max-width:100%}.baw .knob{width:40px;height:40px}}
 @media(max-width:860px){.wg,.ba{grid-template-columns:repeat(2,1fr)}}
 
 .cabg{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,16px)}
@@ -596,6 +606,23 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <figure><img src="w-12.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
     </div>
     <div class="ba-head rv">
+      <h3>Пятка до и после одной обработки</h3>
+      <p>Потяните ползунок, чтобы увидеть результат.</p>
+    </div>
+    <div class="baw rv" id="baw">
+      <div class="side">
+        <img src="ba-posle.jpg" alt="Пятка после обработки в студии «Арсель»">
+        <span class="lbl r">После</span>
+      </div>
+      <div class="side before">
+        <img src="ba-do.jpg" alt="Пятка до обработки: сухая кожа и трещины">
+        <span class="lbl l">До</span>
+      </div>
+      <div class="handle"></div>
+      <div class="knob">‹›</div>
+    </div>
+
+    <div class="ba-head rv">
       <h3>Педикюр с покрытием</h3>
       <p>Стопы делают не только здоровыми, но и красивыми: покрытие, дизайн, аккуратный край.</p>
     </div>
@@ -609,7 +636,6 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <p>Здесь результат виден лучше любого описания. На каждом кадре состояние стопы до обработки и после неё.</p>
     </div>
     <div class="ba rv">
-      <figure><img src="p-1.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
       <figure><img src="p-2.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
       <figure><img src="p-3.jpg" alt="Работа студии «Арсель»" loading="lazy" onerror="this.closest('figure').remove()"></figure>
       <figure><img src="pd-1.jpg" alt="Подология: ноготь до и после обработки" loading="lazy" onerror="this.closest('figure').remove()"></figure>
@@ -925,6 +951,27 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
   },{rootMargin:'0px 0px -60px 0px'});
   document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+})();
+/* шторка «до / после» */
+(function(){
+  var box=document.getElementById('baw');
+  if(!box) return;
+  var before=box.querySelector('.before'), handle=box.querySelector('.handle'), knob=box.querySelector('.knob');
+  function setPct(p){
+    p=Math.max(2,Math.min(98,p));
+    before.style.clipPath='inset(0 '+(100-p)+'% 0 0)';
+    handle.style.left=p+'%'; knob.style.left=p+'%';
+  }
+  function fromEvent(e){
+    var r=box.getBoundingClientRect();
+    var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;
+    setPct(x/r.width*100);
+  }
+  var dragging=false;
+  box.addEventListener('pointerdown',function(e){dragging=true;box.setPointerCapture(e.pointerId);fromEvent(e);});
+  box.addEventListener('pointermove',function(e){if(dragging)fromEvent(e);});
+  box.addEventListener('pointerup',function(){dragging=false;});
+  box.addEventListener('pointercancel',function(){dragging=false;});
 })();
 </script>
 

@@ -312,6 +312,24 @@ body.loc-yar .only-zap{display:none!important}
   .mcard p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .mcard.open p{-webkit-line-clamp:unset;overflow:visible}
 }
+.msheet{position:fixed;inset:0;z-index:90;display:none}
+.msheet.on{display:block}
+.msheet .bg{position:absolute;inset:0;background:rgba(20,18,16,.55);opacity:0;transition:opacity .22s ease}
+.msheet.on .bg{opacity:1}
+.msheet .pan{position:absolute;left:0;right:0;bottom:0;background:var(--bg2);
+  border-radius:22px 22px 0 0;padding:14px 22px 26px;max-height:86vh;overflow:auto;
+  box-shadow:0 -18px 50px rgba(0,0,0,.28);transform:translateY(100%);transition:transform .26s cubic-bezier(.22,.7,.3,1)}
+.msheet.on .pan{transform:translateY(0)}
+.msheet .grab{width:44px;height:4px;border-radius:99px;background:var(--line);margin:0 auto 20px}
+.msheet img{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center center;
+  display:block;margin-bottom:16px}
+.msheet .mrole{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+  font-weight:700;margin-bottom:6px}
+.msheet .mname{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:11px;line-height:1.15}
+.msheet .mtext{color:var(--muted);font-size:15.5px;font-weight:300;line-height:1.62}
+.msheet .cls{margin-top:24px;width:100%;padding:14px;border-radius:999px;border:1px solid var(--line);
+  background:transparent;font:inherit;font-size:12.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:inherit;cursor:pointer}
 .mcard h3{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:4px;line-height:1.15}
 .mcard .role{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);
   font-weight:700;margin-bottom:10px}
@@ -1038,13 +1056,29 @@ document.querySelectorAll('.plist').forEach(function(list){
   list.appendChild(b);
 });
 /* мастера: на телефоне описание в три строки под кнопкой */
+var sheet=document.createElement('div');
+sheet.className='msheet';
+sheet.innerHTML='<div class="bg"></div><div class="pan"><div class="grab"></div>'+
+  '<img alt=""><div class="mrole"></div><div class="mname"></div><div class="mtext"></div>'+
+  '<button type="button" class="cls">Закрыть</button></div>';
+document.body.appendChild(sheet);
+function closeSheet(){sheet.classList.remove('on');document.body.style.overflow='';}
+sheet.querySelector('.bg').addEventListener('click',closeSheet);
+sheet.querySelector('.cls').addEventListener('click',closeSheet);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet();});
 document.querySelectorAll('.mcard').forEach(function(card){
   var p=card.querySelector('p'); if(!p) return;
   var b=document.createElement('button');
   b.type='button'; b.className='mtog'; b.textContent='Подробнее';
   b.addEventListener('click',function(){
-    var open=card.classList.toggle('open');
-    b.textContent = open ? 'Свернуть' : 'Подробнее';
+    var img=card.querySelector('img.ph');
+    sheet.querySelector('img').src=img?img.getAttribute('src'):'';
+    sheet.querySelector('.mrole').textContent=card.querySelector('.role').textContent;
+    sheet.querySelector('.mname').textContent=card.querySelector('h3').textContent;
+    sheet.querySelector('.mtext').textContent=p.textContent;
+    sheet.querySelector('.pan').scrollTop=0;
+    sheet.classList.add('on');
+    document.body.style.overflow='hidden';
   });
   p.parentNode.insertBefore(b,p.nextSibling);
 });

@@ -194,7 +194,7 @@ header .hbtn{padding:11px 24px;font-size:14px}
 .doc-facts span{font-size:13px;color:var(--muted);font-weight:300}
 @media(max-width:520px){.doc-facts{gap:10px}.doc-facts div{padding:13px}.doc-facts b{font-size:19px}.doc-facts span{font-size:12px}}
 .doc-photo{position:relative}
-.doc-photo img{width:100%;aspect-ratio:3/5;object-fit:cover;object-position:center top;display:block;border-radius:var(--radius);
+.doc-photo img{width:100%;aspect-ratio:3/5;object-fit:cover;object-position:center center;display:block;border-radius:var(--radius);
   border:1px solid var(--line);box-shadow:var(--shadow)}
 .doc-photo figcaption{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.95);
   border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-s)}
@@ -294,10 +294,10 @@ body.loc-yar .only-zap{display:none!important}
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .mcard{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
   padding:28px;box-shadow:var(--shadow-s)}
-.mcard .ph{width:88px;height:88px;border-radius:50%;background:var(--deep-soft);
+.mcard .ph{width:150px;height:150px;border-radius:50%;background:var(--deep-soft);
   display:flex;align-items:center;justify-content:center;color:var(--gold);
   font-family:var(--serif);font-size:32px;font-weight:600;margin-bottom:16px}
-.mcard img.ph{display:block;object-fit:cover;object-position:center top}
+.mcard img.ph{display:block;object-fit:cover;object-position:center center}
 .g-grid.g-2{grid-template-columns:1fr 1fr;max-width:820px}
 .certs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px);margin-top:26px;max-width:620px}
 .certs figure{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
@@ -312,7 +312,7 @@ body.loc-yar .only-zap{display:none!important}
 @media(max-width:760px){
   .mgrid{grid-template-columns:1fr 1fr;gap:12px}
   .mcard{padding:18px 15px}
-  .mcard .ph{width:60px;height:60px;font-size:22px;margin-bottom:12px}
+  .mcard .ph{width:104px;height:104px;font-size:22px;margin-bottom:12px}
   .mcard h3{font-size:21px}
   .mcard .role{font-size:11px;letter-spacing:.09em}
   .mcard p{font-size:13.5px}
@@ -459,37 +459,37 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
 
     <div class="mgrid rv only-zap">
       <div class="mcard">
-        <img class="ph" src="m-guzel.jpg" alt="Гузель" loading="lazy">
+        <img class="ph" src="mp-guzel.jpg" alt="Гузель" loading="lazy">
         <div class="role">Топ-мастер · подолог · преподаватель</div>
         <h3>Гузель</h3>
         <p>Маникюр, педикюр, подология. Мастер высшей категории, 14 лет практики, автор курсов студии. 100 оценок в записи.</p>
       </div>
       <div class="mcard">
-        <img class="ph" src="m-ekaterina.jpg" alt="Екатерина" loading="lazy">
+        <img class="ph" src="mp-ekaterina.jpg" alt="Екатерина" loading="lazy">
         <div class="role">Маникюр и педикюр</div>
         <h3>Екатерина</h3>
         <p>Классическое и аппаратное покрытие, гигиенический педикюр. 69 оценок, средняя пятёрка.</p>
       </div>
       <div class="mcard">
-        <img class="ph" src="m-olga.jpg" alt="Ольга" loading="lazy">
+        <img class="ph" src="mp-olga.jpg" alt="Ольга" loading="lazy">
         <div class="role">Маникюр и педикюр</div>
         <h3>Ольга</h3>
         <p>Работает на обеих студиях. 47 оценок на Юбилейном.</p>
       </div>
       <div class="mcard">
-        <img class="ph" src="m-yulia.jpg" alt="Юлия" loading="lazy">
+        <img class="ph" src="mp-yulia.jpg" alt="Юлия" loading="lazy">
         <div class="role">Бровист</div>
         <h3>Юлия</h3>
         <p>Брови и ресницы: коррекция, окрашивание, долговременная укладка, ламинирование. 34 оценки.</p>
       </div>
       <div class="mcard">
-        <img class="ph" src="m-maryam.jpg" alt="Марьям" loading="lazy">
+        <img class="ph" src="mp-maryam.jpg" alt="Марьям" loading="lazy">
         <div class="role">Брови и ресницы</div>
         <h3>Марьям</h3>
         <p>Ламинирование и окрашивание бровей и ресниц. Принимает на обеих студиях.</p>
       </div>
       <div class="mcard">
-        <img class="ph" src="m-dilyara.jpg" alt="Диляра" loading="lazy">
+        <img class="ph" src="mp-dilyara.jpg" alt="Диляра" loading="lazy">
         <div class="role">Маникюр</div>
         <h3>Диляра</h3>
         <p>Покрытие и уходовый маникюр. Принимает на обеих студиях.</p>
@@ -497,19 +497,19 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     </div>
     <div class="mgrid rv only-yar">
       <div class="mcard">
-        <img class="ph" src="m-olga.jpg" alt="Ольга" loading="lazy">
+        <img class="ph" src="mp-olga.jpg" alt="Ольга" loading="lazy">
         <div class="role">Маникюр и педикюр</div>
         <h3>Ольга</h3>
         <p>Ведущий мастер студии на Крохалева. 45 оценок, средняя 4,9.</p>
       </div>
       <div class="mcard">
-        <img class="ph" src="m-maryam.jpg" alt="Марьям" loading="lazy">
+        <img class="ph" src="mp-maryam.jpg" alt="Марьям" loading="lazy">
         <div class="role">Брови и ресницы</div>
         <h3>Марьям</h3>
         <p>Ламинирование бровей и ресниц, окрашивание. 15 оценок.</p>
       </div>
       <div class="mcard">
-        <img class="ph" src="m-dilyara.jpg" alt="Диляра" loading="lazy">
+        <img class="ph" src="mp-dilyara.jpg" alt="Диляра" loading="lazy">
         <div class="role">Маникюр</div>
         <h3>Диляра</h3>
         <p>Покрытие и уходовый маникюр. Мастер недавно в студии, отзывы уже пятёрочные.</p>

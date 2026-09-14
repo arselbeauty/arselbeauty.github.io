@@ -331,12 +331,20 @@ body.loc-yar .only-zap{display:none!important}
   background:transparent;font:inherit;font-size:12.5px;letter-spacing:.11em;text-transform:uppercase;
   color:inherit;cursor:pointer}
 /* подарочный сертификат */
-.gc{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,18px);margin-bottom:26px}
+.gcw{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(24px,3.2vw,52px);align-items:center}
+.gc-photo{min-width:0}
+.gc-photo img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;
+  border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow)}
+.gc-body{min-width:0}
+.gc{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.4vw,18px);margin-bottom:26px}
 .gc div{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
   padding:26px 20px;text-align:center;box-shadow:var(--shadow-s)}
 .gc b{display:block;font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.1;margin-bottom:6px}
 .gc span{display:block;font-size:12.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold);font-weight:700}
 .gc-note{color:var(--muted);font-size:16px;font-weight:300;max-width:640px;margin-bottom:22px}
+@media(max-width:900px){
+  .gcw{grid-template-columns:1fr;gap:clamp(22px,4vw,32px)}
+}
 @media(max-width:760px){
   .gc{grid-template-columns:1fr 1fr;gap:10px}
   .gc div{padding:18px 12px}
@@ -692,7 +700,10 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
       <h2>Подарочный <em>сертификат</em></h2>
       <p>Подарок, который точно пригодится: маме, сестре, подруге или коллегам.</p>
     </div>
-    <div class="gc rv">
+    <div class="gcw">
+      <figure class="gc-photo rv"><img src="sert.jpg" alt="Подарочный сертификат студии красоты «Арсель»" loading="lazy" onerror="this.closest('.gc-photo').remove()"></figure>
+      <div class="gc-body">
+        <div class="gc rv">
       <div><b>1000 ₽</b><span>номинал</span></div>
       <div><b>3000 ₽</b><span>номинал</span></div>
       <div><b>5000 ₽</b><span>номинал</span></div>
@@ -700,6 +711,8 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     </div>
     <p class="gc-note rv">Оформляем в подарочной упаковке или отправляем электронно. Купить можно в любой из двух студий или написать нам в сообщения, подскажем номинал под задачу.</p>
     <a class="btn btn-gold rv" href="https://vk.me/arselbeautyperm" target="_blank" rel="noopener">Написать про сертификат</a>
+      </div>
+    </div>
   </div>
 </section>
 

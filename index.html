@@ -344,6 +344,15 @@ body.loc-yar .only-zap{display:none!important}
   .gc span{font-size:10.5px;letter-spacing:.07em}
   .gc-note{font-size:14.5px}
 }
+/* подзаголовок внутри секции */
+.subhead{margin:clamp(46px,5.4vw,78px) 0 clamp(22px,2.4vw,34px);
+  padding-top:clamp(30px,3.4vw,46px);border-top:1px solid var(--line);max-width:46em}
+.subhead .tag{color:var(--gold);font-size:12.5px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;display:block;margin-bottom:12px}
+.subhead h3 em{font-style:italic;color:var(--gold)}
+.subhead h3{font-family:var(--serif);font-size:clamp(24px,2.6vw,38px);font-weight:600;line-height:1.15;margin-bottom:10px}
+.subhead p{color:var(--muted);font-weight:300}
+@media(max-width:760px){.subhead{margin-top:34px;padding-top:26px}}
 .mcard h3{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:4px;line-height:1.15}
 .mcard .role{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);
   font-weight:700;margin-bottom:10px}
@@ -496,6 +505,12 @@ figure.noimg:before{content:attr(data-ph);display:flex;align-items:center;justif
     </div>
     </div>
 
+    <div class="subhead rv">
+      <span class="tag">Команда</span>
+      <h3>Кто работает <em>в студии</em></h3>
+      <p class="only-zap">Мастера на Юбилейном, Запорожская, 1.</p>
+      <p class="only-yar">Мастера на Крохалева, Емельяна Ярославского, 60.</p>
+    </div>
     <div class="mgrid rv only-zap">
       <div class="mcard">
         <img class="ph" src="mp-guzel.jpg" alt="Гузель" loading="lazy">
